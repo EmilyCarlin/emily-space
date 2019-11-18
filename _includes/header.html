@@ -8,9 +8,14 @@
 </head>
 <header>
     <div class="header-column-one">
-        {% if page.title != "Hi! I'm Emily." %}
+        {% if page.title == "Emily's Blog" or page.title == "work" %}
         <nav>
-            <a href="/">← Take me home</a>
+            <a href="/">← Back home</a>
+        </nav>
+        {% endif %}
+        {% if page.type == "post" %}
+        <nav>
+            <a href="/blog.html">← Back to all posts</a>
         </nav>
         {% endif %}
     </div>
