@@ -1,0 +1,17 @@
+---
+layout: default
+title: Emily's Blog
+---
+<main>
+    {% include header.html %}
+    <section class="blog-list">
+        {% for post in site.posts %}
+        <div class="card">
+            <a href="{{ post.url }}">
+                <h2> {{ post.title }} </h2>
+                <p class="date"> {{ post.date | date_to_long_string }} </p>
+        </div>
+        </a>
+        {% endfor %}
+    </section>
+</main>

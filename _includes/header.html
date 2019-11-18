@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+</head>
+<header>
+    <div class="header-column-one">
+        {% if page.title != "Hi! I'm Emily." %}
+        <nav>
+            <a href="/">← Take me home</a>
+        </nav>
+        {% endif %}
+    </div>
+    <div class="header-column-two">
+        <h1> {{ page.title }} </h1>
+    </div>
+</header>
+
+</html>

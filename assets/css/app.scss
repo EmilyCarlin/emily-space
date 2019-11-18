@@ -1,0 +1,150 @@
+---
+---
+
+@font-face {
+    font-family: 'YoungSerif';
+    src: url("/assets/fonts/YoungSerif-Regular.woff2") format('woff2'),
+        url("/assets/fonts/YoungSerif-Regular.woff") format('woff');
+}
+
+body {
+    font-family: "YoungSerif";
+    line-height: 1.5;
+    background-color: #2f80ed;
+}
+
+h1 { 
+    font-size: 32px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #2f80ed;
+    padding-bottom: 1px;
+    transition: border-bottom 0.1s ease-in-out;
+}
+
+a:hover { 
+    border-bottom: 5px solid #2f80ed;
+}
+
+// header styles 
+
+header { 
+    height: 120px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-bottom: 10px solid #2f80ed;
+}
+
+.header-column-one, .header-column-two  { 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// styles for index page 
+
+main { 
+    border: 10px solid #2f80ed;
+    min-height: calc(100vh - 20px);
+    background-color: white;
+}
+
+.content { 
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+
+.content p { 
+    font-size: 32px;
+}
+
+.content-column-one {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-column-one {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+// blog list styles
+
+.blog-list {
+    max-width: 540px;
+    margin: 20px auto;
+    display:flex; 
+    flex-direction: column;
+    padding: 20px;
+}
+
+.blog-list a {
+    border-bottom: none;
+}
+
+.date { 
+    color: rgba(60, 60, 67, 0.6);
+}
+
+.card {
+    min-height: 10%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all ease-in-out 0.2s;
+    padding: 20px;
+    border: 5px solid #2f80ed;
+    &:hover {
+        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),0 5px 15px 0 rgba(0, 0, 0, 0.08);
+        transform: rotate(-2deg);
+    }
+}
+
+
+
+// media queries 
+
+@media screen and (max-width: 800px) {
+    .top { 
+     padding: 10px;
+    }
+
+    .top h1 { 
+        font-size: 32px;
+    }
+
+    .content { 
+        padding:10px;
+        margin: 10px auto;
+    }
+
+    .content h2 { 
+        font-size:24px;
+    }
+    .content p { 
+        font-size: 18px;
+    }
+
+    header { 
+        grid-template-columns: none;
+        height: auto;
+    }
+    .header-column-one {
+        margin: 10px 0px;
+    }
+    .content { 
+        grid-template-columns: none;
+        height: auto;
+    }
+}
+
