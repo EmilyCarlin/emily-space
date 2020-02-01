@@ -8,20 +8,24 @@
 </head>
 <header>
     <div class="header-column-one">
-        {% if page.title == "Emily's Blog" or page.title == "work" %}
+        {% if page.title == "Emily's Blog" %}
         <nav>
-            <a href="/">← Back home</a>
+            <a href="/">← Take me home</a>
         </nav>
         {% endif %}
         {% if page.type == "post" %}
         <nav>
-            <a href="/blog.html">← Back to all posts</a>
+            <a href="/blog.html">← All posts</a>
         </nav>
         {% endif %}
     </div>
     <div class="header-column-two">
+        {% if page.type == "post" %}
+        {% elsif page.type != "post" %}
         <h1> {{ page.title }} </h1>
+        {% endif %}
     </div>
+    
 </header>
 
 </html>

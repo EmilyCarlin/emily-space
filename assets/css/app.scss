@@ -2,33 +2,30 @@
 ---
 
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
-
-@font-face {
-  font-family: "YoungSerif";
-  src: url("/assets/fonts/YoungSerif-Regular.woff2") format("woff2"),
-    url("/assets/fonts/YoungSerif-Regular.woff") format("woff");
-}
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600,900&display=swap');
 
 body {
-  font-family: "YoungSerif";
+  font-family: 'Work Sans', sans-serif;
   line-height: 1.5;
   background-color: #2f80ed;
+  color: #333;
 }
 
 h1 {
-  font-size: 24px;
+  font-weight: 900;
+  font-size: 32px;
 }
 
 a {
   text-decoration: none;
-  color: black;
-  border-bottom: 3px solid #2f80ed;
+  color: #333;
+  border-bottom: 4px solid #2f80ed;
   padding-bottom: 1px;
   transition: border-bottom 0.1s ease-in-out;
 }
 
 a:hover {
-  border-bottom: 5px solid #2f80ed;
+  border-bottom: 8px solid #2f80ed;
 }
 
 // header styles
@@ -37,7 +34,7 @@ header {
   height: 120px;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  border-bottom: 10px solid #2f80ed;
+  border-bottom: 8px solid #2f80ed;
 }
 
 header a {
@@ -58,33 +55,22 @@ header a {
 // styles for index page
 
 main {
-  border: 10px solid #2f80ed;
-  min-height: calc(100vh - 20px);
+  border: 8px solid #2f80ed;
+  min-height: calc(100vh - 16px);
   background-color: white;
 }
 
 .content {
   margin-top: 40px;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
 }
 
 .content p {
   font-size: 24px;
   max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.content-column-one {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content-column-two {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 // blog list styles
 
@@ -112,8 +98,8 @@ main {
   cursor: pointer;
   transform: rotate(0deg);
   transition: all ease-in-out 0.2s;
-  padding: 20px;
-  border: 5px solid #2f80ed;
+  padding: 16px;
+  border: 4px solid #2f80ed;
   &:hover {
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
       0 5px 15px 0 rgba(0, 0, 0, 0.08);
@@ -123,32 +109,30 @@ main {
 
 .card h2 {
   font-size: 24px;
+  font-weight: 600;
 }
 
 // blog post styles
 
+.title { 
+  font-size: 24px;
+}
+
 .post-container {
-  max-width: 540px;
+  max-width: 640px;
   margin: 40px auto;
   padding: 10px;
 }
 
 .post-container p {
   line-height: 1.7;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .post-content {
-  margin-top: 40px;
+  margin-top: 64px;
 }
 
-// work page styles
-
-.work-content {
-  max-width: 540px;
-  margin: 20px auto;
-}
 
 // media queries
 
