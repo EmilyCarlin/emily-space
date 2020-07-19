@@ -6,7 +6,7 @@ body {
   font-family: 'Work Sans', sans-serif;
   line-height: 1.75;
   background-color: #2f80ed;
-  color: #4A1C03;
+  color: #462200;
 }
 
 h1 {
@@ -16,7 +16,7 @@ h1 {
 
 a {
   text-decoration: none;
-  color: #4A1C03;
+  color: #462200;
   border-bottom: 4px solid #2f80ed;
   padding-bottom: 1px;
   transition: border-bottom 0.1s ease-in-out;
@@ -68,6 +68,26 @@ main {
   max-width: 620px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.under-construction {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: #f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 200px;
+  text-align: center;
+}
+
+.under-construction p {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 
