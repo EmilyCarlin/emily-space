@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 { 
-  margin-bottom: 32px;
+  margin: 32px 0;
   font-size: 24px;
   font-weight: 800;
   transform: rotate(-3deg)
@@ -88,7 +88,7 @@ main {
 }
 
 .content {
-  margin-top: 40px;
+  margin: 48px 0;
   max-width: 540px;
   margin-left: auto;
   margin-right: auto;
@@ -100,15 +100,27 @@ main {
 }
 
 .blob { 
-  border-radius: 30% 70% 68% 32% / 50% 59% 41% 50%;
+  margin-bottom: 24px;
   border: 8px solid var(--accent);
   max-width: 420px; 
-  padding: 24px 48px;
+  padding: 32px 64px;
   transform: rotate(0deg);
   transition: transform .3s;
 }
 .blob:hover { 
   transform: rotate(-3deg);
+}
+
+.blob-one {
+  border-radius: 30% 70% 68% 32% / 50% 59% 41% 50%;
+}
+
+.blob-two {
+  border-radius: 70% 30% 19% 81% / 21% 59% 41% 79%;
+}
+
+.blob-three {
+  border-radius: 82% 18% 81% 19% / 47% 74% 26% 53%;
 }
 
 
