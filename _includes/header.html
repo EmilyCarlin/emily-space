@@ -5,30 +5,9 @@
     <title> {{ site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="color-scheme" content="light dark">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Righteous&display=swap" rel="stylesheet">
+    <meta name="color-scheme" content="light dark"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<header>
-    <div class="header-column-one">
-        {% if page.title == "Hi! I'm Emily." %}
-        {% elsif page.title == "blog" %}
-        <nav>
-            <a href="/">← Take me home</a>
-        </nav>
-        {% elsif page.type == "post" %}
-        <nav>
-            <a href="/blog.html">← All posts</a>
-        </nav>
-        {% endif %}
-    </div>
-    <div class="header-column-two">
-        {% if page.type == "post" %}
-        {% elsif page.type != "post" %}
-        <h1> {{ page.title }} </h1>
-        {% endif %}
-    </div>
-
-</header>
-
 </html>
