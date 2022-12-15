@@ -22,6 +22,8 @@ body {
   font-family: 'Krona One', sans-serif;
   line-height: 1.8;
   font-size: 28px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a { 
@@ -44,6 +46,48 @@ a:hover {
 
 li { 
   padding-bottom: 16px;
+}
+
+.swirly-house {
+  display: grid;
+  justify-content: center;
+}
+.swirly { 
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,4,4,1) 0%, rgba(255,254,0,1) 47%, rgba(0,45,228,1) 100%);
+  height: 240px;
+  width: 240px;
+  padding: 16px;
+  border-radius: 50%;
+  text-align: center;
+  display:grid;
+  align-content: center;
+  justify-content: center;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 24px;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+
+  p {
+  margin:0;
+}
+}
+.blob { 
+  fill: var(--accent);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-position: right bottom;
+  width: 50vmax;
+  z-index: -1;
+}
+
+@keyframes rotate{
+  from{ transform: rotate(-45deg); }
+  to{ transform: rotate(45deg); }
 }
 
 @media (max-width:400px) { 
