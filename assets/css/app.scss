@@ -19,8 +19,9 @@
 body { 
   background-color: var(--background);
   color: var(--text);
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Krona One', sans-serif;
   line-height: 1.8;
+  font-size: 28px;
 }
 
 a { 
@@ -46,6 +47,9 @@ li {
 }
 
 @media (max-width:400px) { 
+  body { 
+    font-size: 18px;
+  }
   .content { 
     padding: 24px;
   }
