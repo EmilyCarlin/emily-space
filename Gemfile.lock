@@ -11,7 +11,8 @@ GEM
     eventmachine (1.2.7)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.2)
+    google-protobuf (3.25.3)
+    google-protobuf (3.25.3-arm64-darwin)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -96,7 +97,7 @@ PLATFORMS
   x86_64-linux-android
 
 DEPENDENCIES
-  google-protobuf (= 3.25.2)
+  google-protobuf (~> 3.25.2)
   jekyll (~> 4.3.3)
   jekyll-feed (~> 0.12)
   minima (~> 2.5b)

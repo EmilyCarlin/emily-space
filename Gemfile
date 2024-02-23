@@ -30,4 +30,4 @@ end
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 ## build error fixing, IDK 
-gem 'google-protobuf', '3.25.2'
+gem 'google-protobuf', '~> 3.25.2'
