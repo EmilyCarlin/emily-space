@@ -1,19 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <title> {{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/assets/css/app.css">
-</head>
-
-<body>
-    <main>
-        {% include header.html %}
-        {{ content }}
-    </main>
-</body>
-
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    <div class="grid-container">
+      <nav
+        class="navigation-sidebar"
+        role="navigation"
+        aria-label="Main Navigation"
+      >
+        <div class="heading">
+          <h3>Emily Carlin</h3>
+        </div>
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/posts/">Posts</a></li>
+        </ul>
+      </nav>
+      <div class="content-column">
+        <div class="ornamental-header"></div>
+        <div class="main-content">{{ content }}</div>
+      </div>
+    </div>
+    <script src="/assets/js/main.js"></script>
+  </body>
 </html>

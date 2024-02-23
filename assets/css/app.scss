@@ -1,103 +1,147 @@
 ---
 ---
 
-@import 'css/normalize.css';
-
 @media (prefers-color-scheme: light) {
   :root {
-  --background: #FFEEDB;
-  --text: #1A0D00;
-  --accent: #F07C00;
+    --background: #decfc5;
+    --background_emphasized_minor: #cbb4a4;
+    --background_emphasized_major: #b99983;
+    --text: #231526;
+    --accent: #5b342a;
+    --accent_opacity_20: rgba(91, 52, 42, 0.2);
+    --callout_block: #e0bed2;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1A0D00;
-    --text: #FFEEDB;
-    --accent: #F07C00;
+    --background: #231526;
+    --background_emphasized_minor: #432848;
+    --background_emphasized_major: #613a69;
+    --text: #decfc5;
+    --accent: #e2bf8e;
+    --accent_opacity_20: rgba(226, 191, 142, 0.2);
+    --callout_block: #5b342a;
   }
 }
 
-body { 
+html {
+  font-size: 16px;
+}
+
+body {
   background-color: var(--background);
   color: var(--text);
-  font-family: 'Krona One', sans-serif;
-  line-height: 1.8;
-  font-size: 28px;
+  font-family: "Young Serif", serif;
   overflow-x: hidden;
   overflow-y: hidden;
+  margin: 0;
 }
 
-a { 
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  color: var(--text);
-  transition: all 0.1s;
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
 }
 
-a:hover { 
-  border-bottom: 4px solid var(--accent);
+p {
+  font-size: 1rem;
 }
-
-.content { 
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 64px;
-}
-
-li { 
-  padding-bottom: 16px;
-}
-
-.swirly-house {
+.grid-container {
   display: grid;
+  grid-template-columns: 15% 1fr;
+}
+
+// Main content styles
+
+.main-content {
+  display: flex;
   justify-content: center;
-}
-.swirly { 
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,4,4,1) 0%, rgba(255,254,0,1) 47%, rgba(0,45,228,1) 100%);
-  height: 240px;
-  width: 240px;
-  padding: 16px;
-  border-radius: 50%;
-  text-align: center;
-  display:grid;
-  align-content: center;
-  justify-content: center;
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 24px;
-  animation-name: rotate;
-  animation-duration: 20s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate-reverse;
-
-  p {
-  margin:0;
-  color: black;
-}
-}
-.blob { 
-  fill: var(--accent);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-position: right bottom;
-  width: 50vmax;
-  z-index: -1;
+  padding: 1rem;
 }
 
-@keyframes rotate{
-  from{ transform: rotate(-45deg); }
-  to{ transform: rotate(45deg); }
+// Ornamental header styles
+.ornamental-header {
+  width: 100%;
+  height: 3rem;
+  border-bottom: 2px solid var(--accent_opacity_20);
+  box-sizing: border-box;
 }
 
-@media (max-width:400px) { 
-  body { 
-    font-size: 18px;
+// Nav bar styles
+
+.navigation-sidebar {
+  height: 100vh;
+  border-right: 2px solid var(--accent_opacity_20);
+  padding: 0 0.5rem;
+
+  .heading {
+    height: 3rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+    }
   }
-  .content { 
-    padding: 24px;
+
+  ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: var(--text);
+  }
+
+  ul li {
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    transition: background-color 0.2s ease;
+  }
+
+  ul li:hover {
+    background-color: var(--background_emphasized_minor);
+  }
+
+  ul li.selected {
+    background-color: var(--background_emphasized_major);
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+  .nav {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+// index specific
+
+.emily-space {
+  margin-top: 4vh;
+  padding: 4vmax;
+  transform: rotate(-2deg);
+  display: inline-block;
+  background-color: var(--callout_block);
+  align-self: flex-start;
+  border-radius: 1rem;
+  white-space: normal;
+}
+
+// Media queries
+
+@media (max-width: 1100px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  .navigation-sidebar {
+    height: fit-content;
+    border-right: none;
+    border-bottom: 2px solid var(--accent_opacity_20);
+  }
+  .ornamental-header {
+    display: none;
   }
 }
