@@ -3,8 +3,11 @@ GEM
   specs:
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.6)
     colorator (1.1.0)
     concurrent-ruby (1.2.3)
+    csv (3.2.8)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -45,7 +48,7 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.4)
-    listen (3.8.0)
+    listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
@@ -97,9 +100,13 @@ PLATFORMS
   x86_64-linux-android
 
 DEPENDENCIES
+  base64
+  bigdecimal
+  csv
   google-protobuf (~> 3.25.2)
   jekyll (~> 4.3.3)
   jekyll-feed (~> 0.12)
+  jekyll-sass-converter
   minima (~> 2.5b)
   tzinfo (~> 1.2)
   tzinfo-data
