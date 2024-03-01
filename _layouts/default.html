@@ -5,25 +5,15 @@
   </head>
   <body>
     <div class="grid-container">
-      <nav
-        class="navigation-sidebar"
-        role="navigation"
-        aria-label="Main Navigation"
-      >
-        <div class="heading">
-          <h3>Emily Carlin</h3>
-        </div>
-        <ul class="nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/posts/">Posts</a></li>
-        </ul>
-      </nav>
+      {% include navigation.html %}
       <div class="content-column">
-        <div class="ornamental-header"></div>
+        <div class="ornamental-header">
+          <button id="theme-toggle">Night night</button>
+        </div>
         <div class="main-content">{{ content }}</div>
       </div>
     </div>
+    <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/main.js"></script>
   </body>
 </html>
