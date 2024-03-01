@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
