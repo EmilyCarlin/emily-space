@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to update the toggle button text
   function updateToggleButtonText(theme) {
-    themeToggle.innerText = theme === "dark" ? "Good Morning" : "Night Night";
+    themeToggle.innerText = theme === "dark" ? "Good Morning" : "Good Night";
   }
 
   // Initially update the button text based on the current theme

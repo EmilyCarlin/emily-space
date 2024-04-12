@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% include header.html %}
+    {% include head.html %}
   </head>
   <body>
-    <div class="grid-container">
-      {% include navigation.html %}
-      <div class="content-column">
-        <div class="ornamental-header">
-          <button id="theme-toggle">Night night</button>
-        </div>
-        <div class="main-content">{{ content }}</div>
-      </div>
+    <div class="main-content">
+      {{ content }}
+      <button id="theme-toggle">Good Night</button>
     </div>
     <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/main.js"></script>
   </body>
 </html>
