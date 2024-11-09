@@ -1,29 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
 
-  // Function to update the toggle button text
-  function updateToggleButtonText(theme) {
-    themeToggle.innerText = theme === "dark" ? "Good Morning" : "Good Night";
+  // Function to update the toggle button's SVG icon
+  function updateToggleButtonIcon(theme) {
+    const darkModeSVG = `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.1364 15.3181C21.9211 15.3181 21.2306 15.5603 20.1357 16.1078C19.1589 16.5962 18.1604 17.0823 17.2139 17.6082C15.9009 18.3376 15.2944 20.3351 15.2397 21.7583C15.1705 23.5581 14.8477 25.4525 15.3187 27.2422C15.6038 28.3258 15.9399 29.4556 16.5821 30.3833C17.2922 31.4089 18.3894 31.9444 19.4074 32.6031C20.9576 33.6062 23.8777 33.6859 25.5054 32.8488C26.7956 32.1853 27.4283 31.2543 28.2079 30.085C29.3558 28.3631 30.4014 26.8861 30.4014 24.724C30.4014 22.9482 29.7976 21.4488 29.1028 19.8456C28.7869 19.1165 28.2768 17.1691 27.5586 16.7044C27.0253 16.3594 26.6847 15.7919 25.9441 15.7919H22.5047M6.42893 12.6713L12.2053 17.3332M22.6627 9.47455C22.6627 8.14393 24.1398 6.89196 25.0317 6M33.4464 15.849C33.962 14.8546 34.5131 13.8884 35.2534 13.05M36.4028 24.1624C37.8886 24.1624 39.2988 24.3219 40.7548 24.6362C41.6947 24.8392 42.5418 25.5838 43.5098 25.5838M34.1918 38.2186V42.3249M20.9253 38.8503C21.0074 38.8606 21.557 41.3244 21.557 41.6931M13.5024 36.9551C13.3917 36.0694 9.34818 37.5744 8.9223 37.7448M4.5 25.4259H9.86976" stroke="#DECFC5" stroke-width="2" stroke-linecap="round"/>
+</svg>`;
+
+    const lightModeSVG = `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.3746 6C20.0414 6 18.8365 7.26467 17.8475 8.02548C15.8759 9.54204 14.0816 11.3199 12.1552 12.9006C11.478 13.4562 10.4818 14.2712 10.0598 15.0518C9.41571 16.2434 9.14717 17.4808 8.67691 18.7256C8.43886 19.3558 8.36772 20.0954 8.29975 20.7581C8.18144 21.9117 7.91852 23.0458 7.79688 24.2014C7.60141 26.0584 7.40282 27.9609 7.55242 29.8308C7.61894 30.6623 8.23667 31.482 8.62104 32.1916C8.99709 32.8858 9.31488 33.6363 9.86426 34.2171C10.6589 35.0571 11.4825 35.9256 12.1971 36.8292C12.7387 37.5143 13.2039 38.2026 13.7616 38.8617C14.0185 39.1653 14.488 39.4484 14.8372 39.623C15.8865 40.1477 16.9046 40.7989 18.036 41.1316C19.0803 41.4388 20.0476 41.7676 20.9416 42.4028C21.3606 42.7005 22.4587 43.6017 23.0369 43.4365C23.6188 43.2702 24.0652 42.774 24.6293 42.5565C25.4352 42.2456 26.2875 41.9143 27.1158 41.6764C31.3076 40.4724 33.8636 36.9617 36.2444 33.5605C37.4139 31.8899 38.8075 30.3864 39.5481 28.434C40.0965 26.9879 40.624 25.543 41.0427 24.0477C41.0689 23.9543 41.4324 22.7578 41.1126 22.7766C40.7427 22.7983 40.1305 24.4993 39.7297 24.8579C39.0693 25.4488 37.5328 25.4468 36.7054 25.6123C35.5333 25.8467 34.3848 26.2271 33.1922 26.3596C31.4548 26.5526 29.8557 26.9436 28.1634 27.3444C25.9185 27.8761 23.1646 28.2434 21.5841 26.1361C20.7717 25.0528 20.7694 23.8023 20.2431 22.595C19.9665 21.9605 19.5385 20.9999 19.4888 20.3041C19.3933 18.9664 19.2374 17.6659 19.2374 16.309C19.2374 15.323 19.0934 14.1962 19.2443 13.2149C19.2978 12.8674 19.4888 12.6466 19.4888 12.286C19.4888 11.6132 19.7233 10.9226 19.8939 10.2745C20.06 9.64343 20.3303 9.10393 20.5923 8.51439C20.7923 8.06448 21.1998 6.71602 21.626 6.50288" stroke="#28203B" stroke-width="2.00092" stroke-linecap="round"/>
+</svg>`;
+
+    themeToggle.innerHTML = theme === "dark" ? darkModeSVG : lightModeSVG;
   }
 
-  // Initially update the button text based on the current theme
+  // Detect initial theme
   const currentTheme = document.documentElement.classList.contains("dark")
     ? "dark"
     : "light";
-  updateToggleButtonText(currentTheme);
+  updateToggleButtonIcon(currentTheme);
 
-  // Event listener for the theme toggle button
+  // Add event listener for toggle
   themeToggle.addEventListener("click", () => {
-    // Toggle the 'dark' class on the <html> element
     document.documentElement.classList.toggle("dark");
-    let newTheme = document.documentElement.classList.contains("dark")
+    const newTheme = document.documentElement.classList.contains("dark")
       ? "dark"
       : "light";
-
-    // Update the button text after the theme change
-    updateToggleButtonText(newTheme);
-
-    // Save the new theme preference to localStorage
-    localStorage.setItem("theme", newTheme);
+    updateToggleButtonIcon(newTheme);
+    localStorage.setItem("theme", newTheme); // Persist theme
   });
 });
