@@ -71,6 +71,9 @@ body {
   font-size: var(--step-0);
   transition: background-color 0.2s ease, color 0.2s ease;
   overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-weight: 500;
   h1,
   h2,
@@ -80,6 +83,7 @@ body {
     font-family: "Young Serif", serif;
     font-weight: 400;
     margin: 0;
+    rotate: -2deg;
   }
   p {
     margin: 0;
@@ -91,6 +95,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  overflow-y: auto;
 }
 
 .centered-container {
@@ -107,6 +112,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+  background-color: var(--background);
 
   .nav-container {
     display: flex;
@@ -130,7 +136,7 @@ footer {
   padding: var(--space-m) 0;
   h1 {
     font-size: var(--step-0);
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-l);
   }
   ul {
     display: flex;
@@ -180,7 +186,7 @@ footer {
   }
 }
 .main-content {
-  padding-top: var(--space-2xl);
+  padding: var(--space-xl) 0;
 }
 
 // home styles
@@ -188,12 +194,12 @@ footer {
 .intro-block {
   display: flex;
   flex-direction: column;
-  gap: var(--space-s);
+  gap: var(--space-m);
   h1 {
-    font-size: var(--step-1);
+    font-size: var(--step-0);
   }
   p {
-    font-size: var(--step-2);
+    font-size: var(--step-1);
   }
   a {
     color: var(--accent);
