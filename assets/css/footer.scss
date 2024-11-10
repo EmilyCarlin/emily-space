@@ -2,6 +2,7 @@ body footer {
   width: 100%;
   border-top: 2px solid var(--accent_opacity_20);
   padding: var(--space-xl) 0;
+  padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom, 20px));
   h1,
   h2,
   h3,
