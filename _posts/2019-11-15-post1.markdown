@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Someday, this will be a post!"
-date: 2020-07-11 08:35:35 -0500
-type: post
+title: The story begins
+date: 2024-11-09
+categories: woodworking
+description: Because the second best time to plant a tree is today.
 ---
 
-But it isn't a post quite yet.
+This is where my first post will live. I can't wait to show you.
