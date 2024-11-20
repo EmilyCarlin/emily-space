@@ -10,18 +10,17 @@ title: emily carlin
   </div>
   <div class="content-block">
     <div class="post-list">
-      {% for post in site.posts %} {% if post.categories contains 'woodworking'
-      %}
+      {% for post in site.posts %}
       <a href="{{ post.url }}" class="post-link">
         <article class="post-preview">
-          <p class="post-date">{{ post.date | date: "%B %Y" }}</p>
+          <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
           <h4 class="post-title">{{ post.title }}</h4>
           {% if post.description %}
           <p class="post-description">{{ post.description }}</p>
           {% endif %}
         </article>
       </a>
-      {% endif %} {% endfor %}
+      {% endfor %}
     </div>
   </div>
 </div>

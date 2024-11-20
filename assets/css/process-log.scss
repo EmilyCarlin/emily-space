@@ -8,6 +8,7 @@
   .post-link {
     text-decoration: none;
     color: var(--text_primary);
+    width: 100%;
 
     &:hover .post-preview {
       transform: rotate(-1deg) scale(1.01);

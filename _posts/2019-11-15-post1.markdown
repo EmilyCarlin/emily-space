@@ -1,9 +1,0 @@
----
-layout: post
-title: The story begins
-date: 2024-11-09
-categories: woodworking
-description: Because the second best time to plant a tree is today.
----
-
-This is where my first post will live. I can't wait to show you.
