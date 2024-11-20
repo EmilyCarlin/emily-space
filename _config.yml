@@ -32,3 +32,6 @@ plugins:
 sass:
   load_paths:
     - node_modules
+
+kramdown:
+  parse_block_html: true
