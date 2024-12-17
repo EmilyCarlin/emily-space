@@ -1,0 +1,7 @@
+@mixin hover-rotate($rotation: -1deg, $scale: 1.05) {
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: rotate($rotation) scale($scale);
+  }
+}

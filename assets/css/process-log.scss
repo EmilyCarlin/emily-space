@@ -1,5 +1,5 @@
 // post list
-.content-block {
+.block {
   .post-list {
     display: flex;
     flex-direction: column;
@@ -48,29 +48,4 @@
 .post-date {
   color: var(--text_secondary);
   font-size: var(--step--1);
-}
-
-.work-container .content-block .post-content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    rotate: 0deg;
-  }
-  h2 {
-    margin: var(--space-m) 0;
-  }
-  h3,
-  h4,
-  h5 {
-    margin: var(--space-s) 0;
-  }
-  p {
-    margin-bottom: var(--space-s);
-  }
-  img {
-    width: 100%;
-    border-radius: 12px;
-  }
 }

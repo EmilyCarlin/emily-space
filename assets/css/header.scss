@@ -1,6 +1,8 @@
+@use "./mixins";
+
 header {
   width: 100%;
-  border-bottom: 2px solid var(--accent_opacity_20);
+  border-bottom: 1px solid var(--accent_opacity_20);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -26,10 +28,6 @@ header {
     height: 3rem;
     font-size: var(--step--1);
     border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      transform: rotate(-2deg) scale(1.05);
-    }
+    @include mixins.hover-rotate(-3deg, 1.1);
   }
 }
