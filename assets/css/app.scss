@@ -4,9 +4,6 @@
 @use "foundations";
 @use "mixins";
 @use "header";
-@use "footer";
-@use "home";
-@use "process-log";
 
 html {
   font-family: system-ui, sans-serif; // Fallback font
@@ -74,14 +71,18 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .centered-container {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   margin-inline: auto;
   width: min(100% - (var(--space-l) * 2), 720px);
   padding-inline: var(--space-l);
+  gap: var(--space-m);
 }
 
 .main-content {
@@ -91,102 +92,146 @@ body {
   gap: var(--space-l);
 }
 
-.blocks {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-l);
+// home-specific styles
+
+.main-content-home {
+  justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
-.block {
+.home-notecard {
+  background-color: var(--background_thin_veil);
+  padding: var(--space-l);
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(-2deg);
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
-  align-self: stretch;
-}
-
-// work styles
-
-.work-block {
-  max-width: 540px;
-  background-color: var(--button_background_one);
-  padding: 4px;
-  border-radius: 12px;
-  position: relative;
-  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--background_thin_veil);
-    animation: pulse 1.5s infinite;
+    inset: 0;
+    background: repeating-radial-gradient(
+      circle at 0 0,
+      var(--button_background_one) 0 0.5px,
+      transparent 0.5px 1px,
+      transparent 1px 2px,
+      var(--button_background_two) 2px 2.5px,
+      transparent 2.5px 3px
+    );
+    background-size: 4px 4px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
   }
 
-  &.loaded::before {
-    display: none;
-  }
-
-  .work-img {
-    width: 100%;
-    border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  &.loaded .work-img {
-    opacity: 1;
+  > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.6;
+.home-p {
+  font-size: var(--step-1);
+
+  span {
+    display: inline-block;
+    white-space: nowrap;
   }
-  50% {
-    opacity: 0.8;
+}
+
+// footer styles
+footer {
+  padding: var(--space-xs);
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--background_thin_veil);
+}
+
+.ticker {
+  display: inline-block;
+  animation: ticker 18s linear infinite;
+  position: relative;
+  left: 100%;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 2rem;
+  color: var(--text_primary);
+  font-weight: 500;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
   }
   100% {
-    opacity: 0.6;
+    transform: translateX(-300%);
   }
 }
 
-// about styles
+.ticker-tape-text {
+  font-size: var(--step--2);
+}
 
-.photo-frame {
-  background-color: var(--background_thin_veil);
-  padding: var(--space-l);
-  border-radius: 12px;
+// temp wood styles
+
+.temp-wood-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  margin-top: var(--space-l);
+}
+
+.itals {
+  font-style: italic;
+}
+
+.wood-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.wood-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+.home-link {
+  display: inline-block;
   width: fit-content;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-m);
-}
-
-.photo-caption {
-  font-size: var(--step--1);
-  text-align: center;
-  max-width: 280px;
-}
-
-.one-column-content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-  align-items: center;
-}
-
-.no-break {
-  white-space: nowrap;
 }
 
 @media screen and (max-width: 620px) {
   .block {
     width: 100%;
+  }
+  .home-notecard {
+    padding: var(--space-m);
+    border-radius: 1rem;
+  }
+  .centered-container {
+    width: 100%;
+    padding-inline: var(--space-s);
+  }
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-150%);
+    }
   }
 }

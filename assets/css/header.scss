@@ -7,6 +7,8 @@ header {
   top: 0;
   z-index: 100;
   background-color: var(--background);
+  box-sizing: border-box;
+
   h4 {
     a {
       color: inherit;
@@ -19,7 +21,10 @@ header {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     padding: var(--space-xs) 0;
+    width: 100%;
+    box-sizing: border-box;
   }
+
   #theme-toggle {
     justify-self: end;
     background-color: var(--button_background_one);
@@ -29,5 +34,22 @@ header {
     font-size: var(--step--1);
     border-radius: 50%;
     @include mixins.hover-rotate(-3deg, 1.1);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  header {
+    .nav-container-home {
+      padding: var(--space-xs) var(--space-s);
+    }
+
+    h4 {
+      font-size: var(--step-0);
+    }
+
+    #theme-toggle {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
