@@ -1,0 +1,61 @@
+@use "sanitize";
+@use "utopia-core-scss/src/utopia" as utopia;
+
+:root {
+  @include utopia.generateTypeScale(
+    (
+      "minWidth": 320,
+      "maxWidth": 1240,
+      "minFontSize": 16,
+      "maxFontSize": 16,
+      "minTypeScale": 1.2,
+      "maxTypeScale": 1.25,
+      "positiveSteps": 4,
+      "negativeSteps": 2
+    )
+  );
+  @include utopia.generateSpaceScale(
+    (
+      "minWidth": 320,
+      "maxWidth": 1240,
+      "minSize": 12,
+      "maxSize": 16,
+      "positiveSteps": (
+        1.5,
+        2,
+        3,
+        4
+      ),
+      "negativeSteps": (
+        0.75,
+        0.5
+      )
+    )
+  );
+}
+
+:root {
+  --background: #cdbbb7;
+  --background_thin_veil: #c0a9a4;
+  --selection_accent: #b49a93;
+  --text_primary: #28203b;
+  --text_secondary: #443858;
+  --button_background_one: #d19ebc;
+  --button_background_two: #fdfcfd;
+  --accent: #5b342a;
+  --accent_opacity_20: rgba(91, 52, 42, 0.2);
+  --callout_block: #e1d4d1;
+}
+
+.dark {
+  --background: #28203b;
+  --background_thin_veil: #34294c;
+  --selection_accent: #3e284d;
+  --text_primary: #cab4af;
+  --text_secondary: #c0b0a9;
+  --button_background_one: #5b342a;
+  --button_background_two: #261612;
+  --accent: #e2bf8e;
+  --accent_opacity_20: rgba(226, 191, 142, 0.2);
+  --callout_block: #3f2344;
+}
