@@ -106,36 +106,13 @@ body {
   border-radius: 2rem;
   position: relative;
   overflow: hidden;
-  transform: rotate(-2deg);
+  transform: rotate(-1.5deg);
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: repeating-radial-gradient(
-      circle at 0 0,
-      var(--button_background_one) 0 0.5px,
-      transparent 0.5px 1px,
-      transparent 1px 2px,
-      var(--button_background_two) 2px 2.5px,
-      transparent 2.5px 3px
-    );
-    background-size: 4px 4px;
-    opacity: 0.4;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  > * {
-    position: relative;
-    z-index: 1;
-  }
 }
 
 .home-p {
